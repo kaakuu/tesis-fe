@@ -1,0 +1,41 @@
+
+  <!-- <ngx-ui-loader [loaderId]="'loggin-loader'" [text]="'Iniciando sesión...'"></ngx-ui-loader> -->
+  <div class="app-login" fxLayout="column" fxFlexFill fxLayoutGap="16px" fxLayoutAlign="center center">
+    <mat-card class="landing">
+      <mat-card-header>
+        <mat-card-title>
+          <span> Login </span>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content fxLayout="column" fxLayoutAlign="start center">
+        <form id="form" [formGroup]="loginForm" fxLayout="row" fxLayoutAlign="start" gdAlignRows="start stretch">
+          <mat-form-field>
+          <mat-icon matPrefix class="colored fas fa-envelope"></mat-icon>
+          <mat-label>Usuario</mat-label>
+            <input matInput formControlName="user" type="user">
+            <mat-error *ngIf="lf.user.errors?.required">
+              Ingresar el Usuario
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <mat-icon matPrefix class="colored fas fa-lock"></mat-icon>
+            <mat-label>Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error *ngIf="lf.password.errors?.required">
+              Ingresar la Contraseña
+            </mat-error>
+          </mat-form-field>
+  
+        </form>
+  
+        <!-- <button id="recover-password" mat-button routerLink="/passwords/pass-recovery">{{'pages.login.recover' | translate}}</button> -->
+  
+      </mat-card-content>
+      <mat-card-actions fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="1rem">
+          <button fxFlexFill [disabled]="loginForm.invalid" form="form" (click)="onSubmit()" mat-flat-button type="submit">INGRESAR
+          </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
