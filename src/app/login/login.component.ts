@@ -33,10 +33,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     const value = this.loginForm.value;
-    console.log(value)
-    
     this._userService.login(value).subscribe( (data : any) => {
-      console.log(data)
       this._userService.setUserInfo(data.token);
       this._router.navigate(['home']);
     }, err => {

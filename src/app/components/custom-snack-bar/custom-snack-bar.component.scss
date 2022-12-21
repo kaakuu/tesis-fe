@@ -1,0 +1,59 @@
+.custom-toast {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .message {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    .text {
+      color: rgba(255, 255, 255, 0.87);
+      white-space: pre-wrap;
+    }
+  }
+
+  *:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .action {
+    // color: #0091ea;
+    color: var(--primary);
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 500 !important;
+    letter-spacing: 1.25px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-transform: capitalize;
+  }
+}
+
+.information,
+.default {
+  .mat-icon {
+    color: #0091ea;
+  }
+}
+
+.success {
+  .mat-icon {
+    color: var(--success);
+  }
+}
+
+.warning {
+  .mat-icon {
+    color: var(--warn);
+  }
+}
+
+.error {
+  .mat-icon {
+    color: var(--error);
+  }
+}

@@ -1,0 +1,13 @@
+<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="24px">
+    <ng-container *ngFor="let file of files$ | async">
+        <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="16px">
+            <a class="m-0" [href]="file.url" target="_blank" rel="noopener noreferrer">
+                <img class="img" src="https://static.thenounproject.com/png/1077671-200.png" alt="" srcset="">
+            </a>
+            <span class="center">
+                {{file.name}}
+            </span>
+        </div>
+    </ng-container>
+    
+</div>

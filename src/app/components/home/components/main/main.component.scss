@@ -1,0 +1,43 @@
+:host {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.navbar {
+	height: 64px;
+}
+
+.sidenav-container {
+	flex: 1 1 auto;
+
+	.mat-sidenav {
+		padding: 24px 16px;
+	}
+
+	.mat-sidenav.closed {
+		width: 94px;
+	}
+
+	.mat-sidenav-content {
+		padding: 24px;
+	}
+}
+
+.link-button {
+	&.active {
+		color: #1565C0;
+		background-color: var(--hover);
+	}
+	.link-name {
+		margin-left: 16px;
+	}
+}
+
+::ng-deep .mat-sidenav .mat-drawer-inner-container {
+	/*
+   Corrige un error al calcular el ancho del sidenav
+   al hacer click en un boton (el ripple effect desborda)
+  */
+	overflow: hidden !important;
+}

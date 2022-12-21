@@ -1,0 +1,30 @@
+<mat-menu #profileMenu="matMenu">
+	<!-- <app-user-profile [user]="user$ | async" (logout)="logout()"></app-user-profile> -->
+</mat-menu>
+
+<mat-toolbar class="navbar" color="primary">
+	<button mat-icon-button class="menu-icon" aria-label="Menu icon-button with menu icon" (click)="sidenavOpened = !sidenavOpened">
+		<mat-icon>menu</mat-icon>
+	</button>
+	<span></span>
+	<span class="spacer"></span>
+	<!-- <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="Botón de perfil de usuario">
+		<mat-icon>account_circle</mat-icon>
+	</button> -->
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container" autosize>
+	<mat-sidenav mode="side" [opened]="false" [disableClose]="true" [ngClass]="{ closed: !sidenavOpened }">
+		<mat-nav-list>
+			<a class="link-button" mat-list-item [routerLink]="link.route" routerLinkActive="active" *ngFor="let link of links">
+				<mat-icon mat-list-icon>{{ link.icon }}</mat-icon>
+				<span class="link-name" *ngIf="sidenavOpened">{{ link.name }}</span>
+			</a>
+		</mat-nav-list>
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<router-outlet></router-outlet>
+	</mat-sidenav-content>
+</mat-sidenav-container>
+
+<!--<app-footer></app-footer>-->

@@ -1,0 +1,16 @@
+.footer {
+	height: 64px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+a {
+	color: var(--primary-lighter);
+	font-size: 14px;
+	text-decoration: none;
+}
+
+a:not(:last-child) {
+	margin-right: 8px;
+}

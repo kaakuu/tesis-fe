@@ -16,4 +16,11 @@ export class FileService {
     return this._http.post(url, formData);
 
   }
+
+  upload( formData: FormData, username : string, filename: string ){
+    const url = `${this.url}/file/upload?user_id=${username}&filename=${filename}`;
+
+    return this._http.post(url, formData);
+
+  }
 }

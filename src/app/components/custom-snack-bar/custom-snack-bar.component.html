@@ -1,0 +1,7 @@
+<div [ngClass]="state" class="custom-toast">
+	<div class="message">
+		<!-- <mat-icon>{{ iconName }}</mat-icon> -->
+		<div class="text body-2">{{ text }}</div>
+	</div>
+	<button class="action" mat-button (click)="onAction()">{{ action}}</button>
+</div>
